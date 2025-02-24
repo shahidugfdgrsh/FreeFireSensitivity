@@ -32,3 +32,4 @@ function redirectToSensitivity(phone) {
         "Motorola Moto G Power": "General: 88, Red Dot: 92, 2x Scope: 84, 4x Scope: 79, AWM Scope: 55",
         "Samsung Galaxy S21": "General: 97, Red Dot: 98, 2x Scope: 91, 4x Scope: 86, AWM Scope: 62",
         "Apple iPhone 12": "General: 95, Red Dot: 97, 2x Scope: 
+        
