@@ -1,73 +1,54 @@
-/* General Page Styles */
 body {
-    font-family: Arial, sans-serif; /* Normal font */
-    background: black;
-    color: white;
-    text-align: center;
+    background-color: black; /* Set the background to solid black */
+    color: white; /* Text color set to white for contrast */
+    font-family: Arial, sans-serif; /* Use a normal font */
     margin: 0;
     padding: 0;
 }
 
-/* Hacker Background Animation */
-@keyframes hackerEffect {
-    0% { background-position: 0 0; }
-    100% { background-position: 100px 100px; }
+#loginContainer,
+#phoneContainer,
+#sensitivityOutput {
+    display: none; /* Hide these containers initially */
+    text-align: center; /* Center the text */
 }
 
-#login-container {
-    background: linear-gradient(to bottom, #000, #222);
-    animation: hackerEffect 5s linear infinite;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-h1 {
-    font-size: 2em;
-}
-
-input {
-    width: 80%;
-    max-width: 300px;
+input[type="text"],
+input[type="password"] {
     padding: 10px;
     margin: 10px;
-    border: none;
-    border-radius: 5px;
+    border: 1px solid white; /* White border for input fields */
+    border-radius: 5px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white background */
+    color: white; /* Input text color */
 }
 
 button {
-    background: blue;
-    color: black;
     padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-/* Phone List */
-#phone-list {
-    display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: center;
-}
-
-#phone-list button {
-    background: blue;
-    color: black;
-    padding: 15px;
     margin: 10px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded edges */
+    background-color: blue; /* Blue background for buttons */
+    color: white; /* White text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Button text size */
 }
 
-/* Sensitivity Output */
-#sensitivity-output {
-    display: none;
-    margin-top: 20px;
-  }
-  
+button:hover {
+    background-color: darkblue; /* Darker blue on hover */
+}
+
+#phoneContainer {
+    margin-top: 20px; /* Space above phone list */
+}
+
+.phone-button {
+    display: block; /* Stack phone buttons vertically */
+    padding: 10px;
+    margin: 5px auto; /* Center the buttons */
+    border: 1px solid white; /* White border for phone buttons */
+    border-radius: 5px; /* Rounded edges */
+    background-color: blue; /* Blue background for phone buttons */
+    color: white; /* White text color */
+    width: 200px; /* Fixed width for phone buttons */
+}
