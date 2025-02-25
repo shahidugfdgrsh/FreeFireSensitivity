@@ -10,7 +10,7 @@ body {
 
 /* Login Page Styles */
 #loginContainer {
-    background: url('https://wallpapercave.com/wp/wp10340440.jpg') no-repeat center center/cover;
+    background-color: black;
     height: 100vh;
     display: flex;
     flex-direction: column;
