@@ -25,30 +25,45 @@ const phones = [
 ];
 
 const sensitivityData = {
-    "Samsung Galaxy S21": "DPI: 800, Sensitivity: 50",
-    "iPhone 13": "DPI: 1000, Sensitivity: 60",
-    "Google Pixel 6": "DPI: 900, Sensitivity: 55",
-    "OnePlus 9": "DPI: 750, Sensitivity: 53",
-    "Xiaomi Redmi Note 10": "DPI: 850, Sensitivity: 52",
+    "Samsung Galaxy S21": { general: 90, redDot: 85, scope2x: 80, scope4x: 75, sniperScope: 70, freeLook: 60 },
+    "iPhone 13": { general: 95, redDot: 90, scope2x: 85, scope4x: 80, sniperScope: 75, freeLook: 65 },
+    "Google Pixel 6": { general: 85, redDot: 80, scope2x: 75, scope4x: 70, sniperScope: 65, freeLook: 55 },
+    "OnePlus 9": { general: 88, redDot: 83, scope2x: 78, scope4x: 73, sniperScope: 68, freeLook: 58 },
+    "Xiaomi Redmi Note 10": { general: 86, redDot: 81, scope2x: 76, scope4x: 71, sniperScope: 66, freeLook: 56 }
 };
 
 const phoneList = document.getElementById("phoneList");
 phones.forEach(phone => {
-    const listItem = document.createElement("li");
-    listItem.innerText = phone;
-    listItem.style.cursor = "pointer";
-    listItem.onclick = () => redirectToSensitivity(phone);
-    phoneList.appendChild(listItem);
+    const button = document.createElement("button");
+    button.innerText = phone;
+    button.onclick = () => redirectToSensitivity(phone);
+    phoneList.appendChild(button);
 });
 
 function redirectToSensitivity(phoneName) {
     document.getElementById("phoneContainer").style.display = "none";
     document.getElementById("sensitivityOutput").style.display = "block";
     document.getElementById("selectedPhone").innerText = phoneName;
-    document.getElementById("sensitivityData").innerText = sensitivityData[phoneName] || "No data available.";
+
+    if (sensitivityData[phoneName]) {
+        document.getElementById("general").innerText = sensitivityData[phoneName].general;
+        document.getElementById("redDot").innerText = sensitivityData[phoneName].redDot;
+        document.getElementById("scope2x").innerText = sensitivityData[phoneName].scope2x;
+        document.getElementById("scope4x").innerText = sensitivityData[phoneName].scope4x;
+        document.getElementById("sniperScope").innerText = sensitivityData[phoneName].sniperScope;
+        document.getElementById("freeLook").innerText = sensitivityData[phoneName].freeLook;
+    } else {
+        document.getElementById("general").innerText = "No data available";
+        document.getElementById("redDot").innerText = "No data available";
+        document.getElementById("scope2x").innerText = "No data available";
+        document.getElementById("scope4x").innerText = "No data available";
+        document.getElementById("sniperScope").innerText = "No data available";
+        document.getElementById("freeLook").innerText = "No data available";
+    }
 }
 
 function goBack() {
     document.getElementById("sensitivityOutput").style.display = "none";
     document.getElementById("phoneContainer").style.display = "block";
-                            }
+    }
+
