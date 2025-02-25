@@ -1,19 +1,110 @@
+/* General Styles */
 body {
     background-color: black;
     color: white;
     font-family: Arial, sans-serif;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
-input, button {
-    margin: 10px;
+/* Login Page Styles */
+#loginContainer {
+    background: url('https://wallpapercave.com/wp/wp10340440.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 32px;
+    color: red;
+}
+
+p {
+    font-size: 18px;
+}
+
+input {
+    width: 250px;
     padding: 10px;
-    border-radius: 10px;
+    margin: 10px;
     border: none;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 button {
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;
     background-color: blue;
-    color: white;
+    color: black;
     cursor: pointer;
+    font-weight: bold;
 }
+
+button:hover {
+    background-color: darkblue;
+}
+
+/* Error Message */
+#errorMessage {
+    color: red;
+    font-size: 16px;
+}
+
+/* Phone List Page */
+#phoneContainer {
+    padding: 20px;
+}
+
+/* Make phone list scrollable */
+#phoneList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 500px; /* Limits height to enable scrolling */
+    overflow-y: scroll; /* Enables vertical scrolling */
+    width: 90%;
+    margin: auto;
+    border: 2px solid white;
+    padding: 10px;
+}
+
+#phoneList button {
+    width: 80%;
+    max-width: 300px;
+    padding: 12px;
+    margin: 5px;
+    font-size: 18px;
+    background-color: blue;
+    border-radius: 25px;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Sensitivity Page */
+#sensitivityOutput {
+    padding: 20px;
+}
+
+#sensitivityOutput p {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+#sensitivityOutput button {
+    background-color: red;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    width: 200px;
+    border-radius: 25px;
+    }
